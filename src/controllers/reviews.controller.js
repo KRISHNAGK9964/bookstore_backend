@@ -9,7 +9,7 @@ import {
 
 export const addReview = async (req, res) => {
   try {
-    const { userId, text, rating } = req.body;
+    const { userId, text, rating, username } = req.body;
     const bookId = req.params.bookId;
     console.log(userId, text, rating, bookId);
     if (!bookId || !text || !rating) {
@@ -23,6 +23,7 @@ export const addReview = async (req, res) => {
     const reviewObject = {
       bookId,
       userId,
+      username,
       text,
       rating,
     };

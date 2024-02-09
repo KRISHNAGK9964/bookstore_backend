@@ -2,7 +2,7 @@ export const getBooksByLimitAndOffset = async (query, limit, offset) => {
   try {
     limit = limit <= 20 ? limit : 20;
     const URI = `https://www.googleapis.com/books/v1/volumes?q=${
-      query || "legend"
+      query || "Art"
     }&startIndex=${offset || 0}&maxResults=${
       limit || 20
     }&projection=lite&orderBy=newest&key=${process.env.GOOGLE_BOOKS_API_KEY}`;

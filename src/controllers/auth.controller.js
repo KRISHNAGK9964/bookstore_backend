@@ -29,7 +29,7 @@ export const signup = async (req, res) => {
     });
 
     return res.status(201).json({
-      message: "User signed up successfully",
+      message: "User signed up successfully",user,accessToken:access_token
     });
   } catch (error) {
     console.log(error);
@@ -60,9 +60,9 @@ export const login = async (req , res) => {
           httpOnly: true,
           maxAge: 7 * 24 * 60 * 60 * 1000,
         });
-    
+        console.log(userExist);
         return res.status(201).json({
-          message: "User logged in successfully 🔓",
+          message: "User logged in successfully 🔓",user:userExist,accessToken:access_token
         });
       } catch (error) {
         console.log(error);

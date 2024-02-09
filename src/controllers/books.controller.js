@@ -3,7 +3,7 @@ import { getBookByVolumeId, getBooksByLimitAndOffset } from "../services/books.s
 export const getBooks = async (req, res) => {
   try {
     const {query,limit , offset} = req.query;
-    console.log(limit,offset);
+    console.log(query,limit,offset);
     const books = await getBooksByLimitAndOffset(query,limit,offset);
     console.log(books);
     return res.status(200).json({books})
