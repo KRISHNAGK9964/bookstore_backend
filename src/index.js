@@ -20,7 +20,7 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: 'http://localhost:5173', // Replace with your frontend domain
+    origin: 'https://bookstore-frontend-2hjc.vercel.app', // Replace with your frontend domain
     credentials: true,
     // Other CORS options as needed
   })
