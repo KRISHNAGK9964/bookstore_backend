@@ -30,11 +30,11 @@ export const signup = async (req, res) => {
 
     res.cookie("access_token", access_token, {
       maxAge: 7 * 24 * 60 * 60 * 1000,
-      httpOnly: true,
-      sameSite: "None",
-      secure: true,
-      path: "/",
-      domain: "https://bookstore-frontend-kohl.vercel.app",
+      // httpOnly: true,
+      // sameSite: "None",
+      // secure: true,
+      // path: "/",
+      // domain: "https://bookstore-frontend-kohl.vercel.app",
     });
 
     return res.status(201).json({
@@ -70,12 +70,12 @@ export const login = async (req, res) => {
     const access_token = generateToken({ userId: `${userExist._id}` });
 
     res.cookie("access_token", access_token, {
-      httpOnly: true,
-      sameSite: "None",
-      secure: true,
       maxAge: 7 * 24 * 60 * 60 * 1000,
-      path: "/",
-      domain: "https://bookstore-frontend-kohl.vercel.app",
+      // httpOnly: true,
+      // sameSite: "None",
+      // secure: true,
+      // path: "/",
+      // domain: "https://bookstore-frontend-kohl.vercel.app",
     });
     console.log(userExist);
     return res.status(201).json({
