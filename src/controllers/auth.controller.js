@@ -34,7 +34,7 @@ export const signup = async (req, res) => {
       // sameSite: "None",
       // secure: true,
       // path: "/",
-      // domain: "https://bookstore-frontend-kohl.vercel.app",
+      domain: "https://bookstore-service-krishangk9964.onrender.com",
     });
 
     return res.status(201).json({
@@ -75,7 +75,7 @@ export const login = async (req, res) => {
       // sameSite: "None",
       // secure: true,
       // path: "/",
-      // domain: "https://bookstore-frontend-kohl.vercel.app",
+      domain: "https://bookstore-service-krishangk9964.onrender.com",
     });
     console.log(userExist);
     return res.status(201).json({

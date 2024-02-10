@@ -3,7 +3,7 @@ import User from "../models/user.js";
 
 export const authMiddleware = async (req, res, next) => {
   const access_token = req.cookies?.access_token;
-  console.log(access_token);
+  console.log(access_token,req.cookies);
   if (!access_token) {
     return res
       .status(401)
