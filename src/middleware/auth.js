@@ -2,7 +2,13 @@ import { verifyAccessToken } from "../utils/helper.js";
 import User from "../models/user.js";
 
 export const authMiddleware = async (req, res, next) => {
-  const access_token = req.cookies?.access_token;
+  let access_token = req.cookies?.access_token;
+  const bearerHeader = req.headers['authorization'] || req.headers['Authorization'];
+  if(typeof bearerHeader !== "undefined"){
+    const bearer = bearerHeader.split(' ');
+    const bearerToken = bearer[1];
+    access_token = bearerToken;
+  }
   console.log(access_token,req.cookies);
   if (!access_token) {
     return res
